@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Desafio.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Desafio.Web.Controllers.HomeController">
+            <summary>
+            HomeController
+            </summary>
+        </member>
+        <member name="M:Desafio.Web.Controllers.HomeController.#ctor(Desafio.Negocio.Interfaces.IUsuarioAutenticacaoRepositorio)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="iUsuarioAutenticacaoRepositorio"></param>
+        </member>
+        <member name="M:Desafio.Web.Controllers.HomeController.Autenticar(Desafio.Negocio.Modelos.UsuarioAutenticacao)">
+            <summary>
+            Rota para autenticação. 
+            </summary>
+            <param name="usuarioAutenticacao"> Objeto de UsuarioAutenticacao. Informar somente Nome e Senha => Nome=globaltec | Senha=globaltec</param>
+            <returns></returns>
+        </member>
+        <member name="T:Desafio.Web.Controllers.PessoaController">
+            <summary>
+            PessoaController
+            </summary>
+        </member>
+        <member name="M:Desafio.Web.Controllers.PessoaController.#ctor(Desafio.Negocio.Interfaces.IPessoaRepositorio)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="iPessoaRepositorio"></param>
+        </member>
+        <member name="M:Desafio.Web.Controllers.PessoaController.Get">
+            <summary>
+            Rota para consulta de pessoas, que retorna uma lista de objeto de pessoas
+            </summary>
+            <returns>Lista de Todas as Pessoas</returns>
+        </member>
+        <member name="M:Desafio.Web.Controllers.PessoaController.Get(System.Guid)">
+            <summary>
+            Rota para consultar uma pessoa pelo seu código
+            </summary>
+            <param name="id">Id que deseja buscar</param>
+            <returns>Obtejo pessoa</returns>
+        </member>
+        <member name="M:Desafio.Web.Controllers.PessoaController.Get(System.String)">
+            <summary>
+            Rota para consultar pessoas de uma determinada UF
+            </summary>
+            <param name="Uf">Uf que deseja consultar</param>
+            <returns>Lista de Pessoas da UF informada</returns>
+        </member>
+        <member name="M:Desafio.Web.Controllers.PessoaController.Post(Desafio.Negocio.Modelos.Pessoa)">
+            <summary>
+            rota de gravar pessoa
+            </summary>
+            <param name="pessoa">Objeto pessoa preenchida. OBS.: não informar Id, pois é gerado automático</param>
+            <returns>Objeto Pessoa</returns>
+        </member>
+        <member name="M:Desafio.Web.Controllers.PessoaController.Put(System.Guid,Desafio.Negocio.Modelos.Pessoa)">
+            <summary>
+            Rota para atualizar os dados de uma pessoa
+            </summary>
+            <param name="id">Id da pessoa que deseja alterar</param>
+            <param name="pessoa">Objeto pessoa atualizado</param>
+            <returns>Objeto pessoa com dados atualizados</returns>
+        </member>
+        <member name="M:Desafio.Web.Controllers.PessoaController.Delete(System.Guid)">
+            <summary>
+            Rota para excluir uma pessoa
+            </summary>
+            <param name="id">Id da pessoa que deseja excluir</param>
+            <returns>mensagem</returns>
+        </member>
+        <member name="M:Desafio.Web.Controllers.PessoaController.ValidaDadosPessoaInclusao(Desafio.Negocio.Modelos.Pessoa,System.String@)">
+            <summary>
+            Valida dados do Objeto Pessoa para inclusão
+            </summary>
+            <param name="pessoa">Objeto para validação</param>
+            <param name="mensagem">Mensagem de retorno</param>
+            <returns>verdadeiro ou falso</returns>
+        </member>
+        <member name="M:Desafio.Web.Controllers.PessoaController.ValidaDadosPessoaAlteracao(System.Guid,Desafio.Negocio.Modelos.Pessoa,System.String@)">
+            <summary>
+            Valida dados do Objeto Pessoa para inclusão
+            </summary>
+            <param name="Id">Id da Pessoa a ser alterada</param>
+            <param name="pessoa">Objeto para validação</param>
+            <param name="mensagem">Mensagem de retorno</param>
+            <returns>verdadeiro ou falso</returns>
+        </member>
+        <member name="T:Desafio.Web.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="M:Desafio.Web.Program.Main(System.String[])">
+            <summary>
+            Main
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Desafio.Web.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            CreateHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Desafio.Web.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:Desafio.Web.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Desafio.Web.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:Desafio.Web.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Desafio.Web.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:Desafio.Web.Util.UtilitarioToken">
+            <summary>
+            UtilitarioToken
+            </summary>
+        </member>
+        <member name="P:Desafio.Web.Util.UtilitarioToken.ChavePrivada">
+            <summary>
+            ChavePrivada
+            </summary>
+        </member>
+        <member name="M:Desafio.Web.Util.UtilitarioToken.GerarToken(Desafio.Negocio.Modelos.UsuarioAutenticacao)">
+            <summary>
+            GerarToken
+            </summary>
+            <param name="usuarioAutenticacao"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
