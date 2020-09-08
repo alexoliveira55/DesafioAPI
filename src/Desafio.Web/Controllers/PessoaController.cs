@@ -210,7 +210,7 @@ namespace Desafio.Web.Controllers
                 return false;
             }
 
-            var resultadoBusca = _IPessoaRepositorio.Buscar(p => p.Nome == pessoa.Nome && p.Cpf == pessoa.Cpf);
+            var resultadoBusca = _IPessoaRepositorio.Buscar(p => p.Nome.ToUpper() == pessoa.Nome.ToUpper() && p.Cpf == pessoa.Cpf);
 
             if (resultadoBusca.Count() > 0)
             {
@@ -250,7 +250,7 @@ namespace Desafio.Web.Controllers
                 return false;
             }
 
-            var resultadoBusca = _IPessoaRepositorio.Buscar(p => p.Nome == pessoa.Nome && p.Cpf == pessoa.Cpf && p.Id != Id);
+            var resultadoBusca = _IPessoaRepositorio.Buscar(p => p.Nome.ToUpper() == pessoa.Nome.ToUpper() && p.Cpf == pessoa.Cpf && p.Id != Id);
 
             if (resultadoBusca.Count() > 0)
             {
